@@ -21,7 +21,8 @@ model = BartCaptionModel(max_length = 128)
 pretrained_object = torch.load('./transfer.pth', map_location='cpu')
 state_dict = pretrained_object['state_dict']
 model.load_state_dict(state_dict)
-torch.cuda.set_device(device)
+if torch.cuda.is_available():
+    torch.cuda.set_device(device)
 model = model.cuda(device)
 model.eval()
 
