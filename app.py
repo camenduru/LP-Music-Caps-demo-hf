@@ -11,12 +11,13 @@ from utils.audio_utils import load_audio, STR_CH_FIRST
 
 if os.path.isfile("transfer.pth") == False:
     torch.hub.download_url_to_file('https://huggingface.co/seungheondoh/lp-music-caps/resolve/main/transfer.pth', 'transfer.pth')
+    torch.hub.download_url_to_file('https://huggingface.co/seungheondoh/lp-music-caps/resolve/main/folk.wav', 'folk.wav')
     torch.hub.download_url_to_file('https://huggingface.co/seungheondoh/lp-music-caps/resolve/main/electronic.mp3', 'electronic.mp3')
     torch.hub.download_url_to_file('https://huggingface.co/seungheondoh/lp-music-caps/resolve/main/orchestra.wav', 'orchestra.wav')
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
-example_list = ['electronic.mp3', 'orchestra.wav']
+example_list = ['folk.wav', 'electronic.mp3', 'orchestra.wav']
 model = BartCaptionModel(max_length = 128)
 pretrained_object = torch.load('./transfer.pth', map_location='cpu')
 state_dict = pretrained_object['state_dict']
@@ -65,10 +66,10 @@ title = "Interactive demo: Music Captioning 🤖🎵"
 description = """
 <p style='text-align: center'> LP-MusicCaps: LLM-Based Pseudo Music Captioning</p> 
 <p style='text-align: center'> SeungHeon Doh, Keunwoo Choi, Jongpil Lee, Juhan Nam, ISMIR 2023</p> 
-<p style='text-align: center'> <a href='#' target='_blank'>ArXiv</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>Github</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>LP-MusicCaps-Dataset</a> </p>
+<p style='text-align: center'> <a href='#' target='_blank'>ArXiv</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>Codes</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>Dataset</a> </p>
 <p style='text-align: center'> To use it, simply upload your audio and click 'submit', or click one of the examples to load them. Read more at the links below. </p>
 """
-article = "<p style='text-align: center'><a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>LP-MusicCaps Github</a> | <a href='#' target='_blank'>LP-MusicCaps Paper</a></p>"
+article = "<p style='text-align: center'><a href='https://seungheondoh.github.io/' target='_blank'>Author Info</a> | <a href='https://github.com/seungheondoh' target='_blank'>Github</a></p>"
 
 
 demo = gr.Interface(fn=captioning,
