@@ -23,7 +23,7 @@ state_dict = pretrained_object['state_dict']
 model.load_state_dict(state_dict)
 if torch.cuda.is_available():
     torch.cuda.set_device(device)
-model = model.cuda(device)
+    model = model.cuda(device)
 model.eval()
 
 def get_audio(audio_path, duration=10, target_sr=16000):
@@ -47,7 +47,7 @@ def get_audio(audio_path, duration=10, target_sr=16000):
 
 def captioning(audio_path):
     audio_tensor = get_audio(audio_path = audio_path)
-    if device is not None:
+    if torch.cuda.is_available():
         audio_tensor = audio_tensor.to(device)
     with torch.no_grad():
         output = model.generate(
