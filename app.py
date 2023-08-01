@@ -66,7 +66,7 @@ title = "Interactive demo: Music Captioning 🤖🎵"
 description = """
 <p style='text-align: center'> LP-MusicCaps: LLM-Based Pseudo Music Captioning</p> 
 <p style='text-align: center'> SeungHeon Doh, Keunwoo Choi, Jongpil Lee, Juhan Nam, ISMIR 2023</p> 
-<p style='text-align: center'> <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>ArXiv</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>Codes</a> | <a href='https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MC' target='_blank'>Dataset</a> </p>
+<p style='text-align: center'> <a href='https://arxiv.org/abs/2307.16372' target='_blank'>ArXiv</a> | <a href='https://github.com/seungheondoh/lp-music-caps' target='_blank'>Codes</a> | <a href='https://huggingface.co/datasets/seungheondoh/LP-MusicCaps-MC' target='_blank'>Dataset</a> </p>
 <p style='text-align: center'> To use it, simply upload your audio and click 'submit', or click one of the examples to load them. Read more at the links below. </p>
 """
 
