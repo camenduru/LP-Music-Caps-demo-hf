@@ -85,4 +85,4 @@ demo = gr.Interface(fn=captioning,
                     article=article, 
                     cache_examples=False
                     )
-demo.launch()
+demo.launch(share=True)
