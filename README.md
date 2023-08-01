@@ -1,10 +1,10 @@
 ---
 title: Lp Music Caps
-emoji: 🔥
+emoji: 🎵🎵🎵
 colorFrom: purple
 colorTo: indigo
 sdk: gradio
-sdk_version: 3.36.1
+sdk_version: 3.33.1
 app_file: app.py
 pinned: false
 license: mit
